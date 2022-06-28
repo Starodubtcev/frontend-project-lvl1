@@ -15,3 +15,7 @@ https://asciinema.org/a/QvnVL9XNT7zykQQOohRKo60Tu
 example of the biggest common divider game:
 
 https://asciinema.org/a/cgZz5j4r8AWsb5cEWhhmSc8FI
+
+example of the Arifmethic progression game:
+
+https://asciinema.org/a/nunueUOvWQRuSBIYbv4qwfVTh
