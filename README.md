@@ -4,18 +4,22 @@
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
-example of is even game:
+example of Is even game:
 
 https://asciinema.org/a/OjkHQNAMoZEQSCshAXND5pzNB
 
-example of calculation game:
+example of Calculation game:
 
 https://asciinema.org/a/QvnVL9XNT7zykQQOohRKo60Tu
 
-example of the biggest common divider game:
+example of The biggest common divider game:
 
 https://asciinema.org/a/cgZz5j4r8AWsb5cEWhhmSc8FI
 
-example of the Arifmethic progression game:
+example of Arifmethic progression game:
 
 https://asciinema.org/a/nunueUOvWQRuSBIYbv4qwfVTh
+
+example of Is prime game
+
+https://asciinema.org/a/X0w6GRACf0sDvHOrjrqXjkAbL
