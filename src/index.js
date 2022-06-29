@@ -7,7 +7,7 @@ const gameLogic = (game, name) => {
       console.log('Correct!');
       countRound += 1;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again. ${name}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       countRound += 4;
     }
     if (countRound === 3) {
