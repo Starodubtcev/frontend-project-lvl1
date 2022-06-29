@@ -10,12 +10,12 @@ const primeGame = () => {
   const oneRound = () => {
     const number1 = getRandomNumber();
     let correctAnswer = '';
-    for (let i = 2; i <= number1 / 2; i += 1) {
-      if (number1 % i === 0 || number1 === 2) {
+    for (let i = 2; i < number1; i += 1) {
+      if (number1 % i !== 0) {
+        correctAnswer = 'yes';
+      } else {
         correctAnswer = 'no';
         i = number1;
-      } else {
-        correctAnswer = 'yes';
       }
     }
 
