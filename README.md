@@ -9,6 +9,13 @@
 4. Игра прогрессия. Дается прогрессия чисел с одним пропущенным числом, нужно написать какое число в прогрессии пропущенно.
 5. Игра простые числа. Дается случайное число, нужно ответить является ли число простым или нет.
 
+Для запуска игры установите Node.js последней версии. Склонируйте репозиторий себе на машину. Выполните установку зависимостей (make install). Запустите игру следующими командами:
+Проверка на четность - brain-even
+Математические действия - brain-calc
+Наибольший общий делитель - brain-gcd
+Прогрессия - brain-progression
+Простые числа - brain-prime
+
 [![Actions Status](https://github.com/Starodubtcev/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Starodubtcev/frontend-project-lvl1/actions)
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
