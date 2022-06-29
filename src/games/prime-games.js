@@ -11,11 +11,11 @@ const primeGame = () => {
     const number1 = getRandomNumber();
     let correctAnswer = '';
     for (let i = 2; i <= number1 / 2; i += 1) {
-      if (number1 % i !== 0) {
-        correctAnswer = 'yes';
-      } else {
+      if (number1 % i === 0 || number1 === 2) {
         correctAnswer = 'no';
         i = number1;
+      } else {
+        correctAnswer = 'yes';
       }
     }
 
