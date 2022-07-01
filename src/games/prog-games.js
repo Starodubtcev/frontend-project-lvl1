@@ -1,12 +1,7 @@
-import readlineSync from 'readline-sync';
-import getRandomNumber from '../getRandomNumber.js';
+import { getRandomNumber } from '../helpers.js';
 import gameLogic from '../index.js';
-import greeting from '../cli.js';
 
 const calcGame = () => {
-  const name = greeting();
-  console.log('What number is missing in the progression?');
-
   const oneRound = () => {
     const numberStart = getRandomNumber();
     const progressionLength = 5 + Math.round(getRandomNumber() / 20);
@@ -21,10 +16,11 @@ const calcGame = () => {
     const emptyElement = Math.floor(Math.random() * (progression.length));
     const correctAnswer = String(progression[emptyElement]);
     progression[emptyElement] = '..';
-    const question = readlineSync.question(`Question: ${progression.join(' ')}\nYour answer: `);
+    const question = `${progression.join(' ')}`;
     return [question, correctAnswer];
   };
-  gameLogic(oneRound, name);
+  const gameTarget = 'What number is missing in the progression?';
+  gameLogic(oneRound, gameTarget);
 };
 
 export default calcGame;

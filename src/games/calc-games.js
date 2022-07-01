@@ -1,12 +1,7 @@
-import readlineSync from 'readline-sync';
-import getRandomNumber from '../getRandomNumber.js';
+import { getRandomNumber } from '../helpers.js';
 import gameLogic from '../index.js';
-import greeting from '../cli.js';
 
 const calcGame = () => {
-  const name = greeting();
-  console.log('What is the result of the expression?');
-
   const oneRound = () => {
     const number1 = getRandomNumber();
     const number2 = getRandomNumber();
@@ -24,12 +19,12 @@ const calcGame = () => {
           return 'incorrect action';
       }
     };
-    const question = readlineSync.question(`Question: ${number1} ${getAction} ${number2}\nYour answer: `);
+    const question = `${number1} ${getAction} ${number2}`;
     const correctAnswer = String(getResult(number1, number2, getAction));
     return [question, correctAnswer];
   };
-
-  gameLogic(oneRound, name);
+  const gameTarget = 'What is the result of the expression?';
+  gameLogic(oneRound, gameTarget);
 };
 
 export default calcGame;

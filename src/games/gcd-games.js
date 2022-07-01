@@ -1,16 +1,11 @@
-import readlineSync from 'readline-sync';
-import getRandomNumber from '../getRandomNumber.js';
+import { getRandomNumber } from '../helpers.js';
 import gameLogic from '../index.js';
-import greeting from '../cli.js';
 
 const gcdGame = () => {
-  const name = greeting();
-  console.log('Find the greatest common divisor of given numbers.');
-
   const oneRound = () => {
     const number1 = getRandomNumber() + 1;
     const number2 = getRandomNumber() + 1;
-    const question = readlineSync.question(`Question: ${number1} ${number2}\nYour answer: `);
+    const question = `${number1} ${number2}`;
     const minNumber = Math.min(number1, number2);
     const maxNumber = Math.max(number1, number2);
     let divider = minNumber;
@@ -23,7 +18,8 @@ const gcdGame = () => {
     }
     return [question, String(divider)];
   };
-  gameLogic(oneRound, name);
+  const gameTarget = 'Find the greatest common divisor of given numbers.';
+  gameLogic(oneRound, gameTarget);
 };
 
 export default gcdGame;

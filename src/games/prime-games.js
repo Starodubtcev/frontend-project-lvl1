@@ -1,12 +1,7 @@
-import readlineSync from 'readline-sync';
-import getRandomNumber from '../getRandomNumber.js';
+import { getRandomNumber } from '../helpers.js';
 import gameLogic from '../index.js';
-import greeting from '../cli.js';
 
 const primeGame = () => {
-  const name = greeting();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
   const oneRound = () => {
     const number1 = getRandomNumber();
     let correctAnswer = '';
@@ -19,10 +14,11 @@ const primeGame = () => {
       }
     }
 
-    const question = readlineSync.question(`Question: ${number1} \nYour answer: `);
+    const question = number1;
     return [question, correctAnswer];
   };
-  gameLogic(oneRound, name);
+  const gameTarget = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  gameLogic(oneRound, gameTarget);
 };
 
 export default primeGame;
