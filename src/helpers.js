@@ -6,5 +6,5 @@ const greeting = () => {
   console.log(`Hello, ${name}!`);
   return name;
 };
-const getRandomNumber = () => Math.round(Math.random() * 100);
+const getRandomNumber = () => Math.floor(Math.round(Math.random() * 100) + 1);
 export { greeting, getRandomNumber };

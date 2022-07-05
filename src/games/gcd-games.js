@@ -1,25 +1,29 @@
 import { getRandomNumber } from '../helpers.js';
-import gameLogic from '../index.js';
+import gameRun from '../index.js';
 
-const gcdGame = () => {
-  const oneRound = () => {
-    const number1 = getRandomNumber() + 1;
-    const number2 = getRandomNumber() + 1;
-    const question = `${number1} ${number2}`;
-    const minNumber = Math.min(number1, number2);
-    const maxNumber = Math.max(number1, number2);
-    let divider = minNumber;
-    while (divider > 0) {
-      if ((maxNumber % divider === 0) && (minNumber % divider === 0)) {
-        break;
-      } else {
-        divider -= 1;
-      }
+const gameDescriprion = 'Find the greatest common divisor of given numbers.';
+const getGreatComonDivider = (num1, num2) => {
+  const minNumber = Math.min(num1, num2);
+  const maxNumber = Math.max(num1, num2);
+  let divider = minNumber;
+  for (let i = divider; i > 0; i -= 1) {
+    if ((maxNumber % i === 0) && (minNumber % i === 0)) {
+      divider = i;
+      break;
     }
-    return [question, String(divider)];
-  };
-  const gameTarget = 'Find the greatest common divisor of given numbers.';
-  gameLogic(oneRound, gameTarget);
+  } return divider;
 };
 
-export default gcdGame;
+const gcdGameRun = () => {
+  const getGameData = () => {
+    const number1 = getRandomNumber();
+    const number2 = getRandomNumber();
+    const question = `${number1} ${number2}`;
+    const gameDivider = getGreatComonDivider(number1, number2);
+    return [question, String(gameDivider)];
+  };
+
+  gameRun(getGameData, gameDescriprion);
+};
+
+export default gcdGameRun;
