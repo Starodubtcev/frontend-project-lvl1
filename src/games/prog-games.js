@@ -3,33 +3,26 @@ import gameRun from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 const progressionGameRun = () => {
-  const getEmptyProgElement = (numStart, progLength, progStep) => {
-    const prog = [numStart];
-    let element = numStart;
-    for (let i = 0; i < progLength - 1; i += 1) {
-      element += progStep;
-      prog.push(element);
+  const getProgression = () => {
+    const progressionStep = getRandomNumber(1, 10);
+    const progressionStart = getRandomNumber();
+    const progressionLength = getRandomNumber(5, 10);
+    const progression = [progressionStart];
+    let element = progressionStart;
+    for (let i = 1; i < progressionLength; i += 1) {
+      element += progressionStep;
+      progression.push(element);
     }
-    const emptyElement = Math.floor(Math.random() * (progLength));
-    const missedNumber = String(prog[emptyElement]);
-    prog[emptyElement] = '..';
-    return [prog, missedNumber];
+    return progression;
   };
 
   const getGameData = () => {
-    const numberStart = getRandomNumber();
-    const maxRandomNumber = 100;
-    const minProgLength = 5;
-    const maxProgLength = 10;
-    const progLengthIndicator = maxRandomNumber / (maxProgLength - minProgLength);
-    const progressionLength = minProgLength + Math.round(getRandomNumber() / progLengthIndicator);
-    const minProgStep = 1;
-    const maxProgStep = 11;
-    const progStepIndicator = maxRandomNumber / (maxProgStep - minProgStep);
-    const progressionStep = Math.round(getRandomNumber() / progStepIndicator) + minProgStep;
-    const progData = getEmptyProgElement(numberStart, progressionLength, progressionStep);
-    const question = `${progData[0].join(' ')}`;
-    return [question, progData[1]];
+    const roundProgression = getProgression();
+    const emptyElement = getRandomNumber(1, roundProgression.length);
+    const correctAnswer = String(roundProgression[emptyElement - 1]);
+    roundProgression[emptyElement - 1] = '..';
+    const question = `${roundProgression.join(' ')}`;
+    return [question, correctAnswer];
   };
 
   gameRun(getGameData, gameDescription);

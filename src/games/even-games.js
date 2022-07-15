@@ -3,19 +3,16 @@ import gameRun from '../index.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (num) => {
-  let result = '';
   if (num % 2 === 0) {
-    result = 'yes';
-  } else {
-    result = 'no';
-  } return result;
+    return true;
+  } return false;
 };
 
 const evenGameRun = () => {
   const getGameData = () => {
     const number1 = getRandomNumber();
     const question = number1;
-    const correctAnswer = isEven(number1);
+    const correctAnswer = isEven(number1) ? 'yes' : 'no';
     return [question, correctAnswer];
   };
 

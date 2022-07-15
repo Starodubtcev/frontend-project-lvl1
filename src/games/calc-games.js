@@ -20,7 +20,7 @@ const calcGameRun = () => {
     const number1 = getRandomNumber();
     const number2 = getRandomNumber();
     const action = ['+', '-', '*'];
-    const getAction = action[getRandomNumber() % 3];
+    const getAction = action[getRandomNumber(0, 2)];
     const question = `${number1} ${getAction} ${number2}`;
     const correctAnswer = String(getResult(number1, number2, getAction));
     return [question, correctAnswer];
