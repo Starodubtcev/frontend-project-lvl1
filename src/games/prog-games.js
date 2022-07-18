@@ -2,22 +2,22 @@ import { getRandomNumber } from '../helpers.js';
 import gameRun from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
-const progressionGameRun = () => {
-  const getProgression = () => {
-    const progressionStep = getRandomNumber(1, 10);
-    const progressionStart = getRandomNumber();
-    const progressionLength = getRandomNumber(5, 10);
-    const progression = [progressionStart];
-    let element = progressionStart;
-    for (let i = 1; i < progressionLength; i += 1) {
-      element += progressionStep;
+export default () => {
+  const getProgression = (startNumber, step, length) => {
+    const progression = [startNumber];
+    let element = startNumber;
+    for (let i = 1; i < length; i += 1) {
+      element += step;
       progression.push(element);
     }
     return progression;
   };
 
   const getGameData = () => {
-    const roundProgression = getProgression();
+    const progressionStart = getRandomNumber();
+    const progressionStep = getRandomNumber(1, 10);
+    const progressionLength = getRandomNumber(5, 10);
+    const roundProgression = getProgression(progressionStart, progressionStep, progressionLength);
     const emptyElement = getRandomNumber(1, roundProgression.length);
     const correctAnswer = String(roundProgression[emptyElement - 1]);
     roundProgression[emptyElement - 1] = '..';
@@ -27,5 +27,3 @@ const progressionGameRun = () => {
 
   gameRun(getGameData, gameDescription);
 };
-
-export default progressionGameRun;
