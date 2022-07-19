@@ -14,14 +14,12 @@ const getGreatComonDivider = (num1, num2) => {
   } return divider;
 };
 
-export default () => {
-  const getGameData = () => {
-    const number1 = getRandomNumber();
-    const number2 = getRandomNumber();
-    const question = `${number1} ${number2}`;
-    const correctAnswer = getGreatComonDivider(number1, number2);
-    return [question, String(correctAnswer)];
-  };
-
-  gameRun(getGameData, gameDescriprion);
+const getGameData = () => {
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
+  const question = `${number1} ${number2}`;
+  const correctAnswer = getGreatComonDivider(number1, number2);
+  return [question, String(correctAnswer)];
 };
+
+export default () => gameRun(getGameData, gameDescriprion);

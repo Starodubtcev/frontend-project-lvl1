@@ -12,12 +12,11 @@ const isPrime = (num) => {
   return true;
 };
 
-export default () => {
-  const getGameData = () => {
-    const number = getRandomNumber();
-    const correctAnswer = isPrime(number) ? 'yes' : 'no';
-    const question = number;
-    return [question, correctAnswer];
-  };
-  gameRun(getGameData, gameDescription);
+const getGameData = () => {
+  const number = getRandomNumber();
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  const question = number;
+  return [question, correctAnswer];
 };
+
+export default () => gameRun(getGameData, gameDescription);
